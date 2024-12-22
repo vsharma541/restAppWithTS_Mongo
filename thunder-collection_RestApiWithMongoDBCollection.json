@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "RestApiWithMongoDBCollection",
     "collectionId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
-    "dateExported": "2024-12-22T09:46:15.319Z",
+    "dateExported": "2024-12-22T10:15:33.557Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -52,11 +52,23 @@
             "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
             "containerId": "",
             "name": "Get employee/s by name",
-            "url": "http://localhost:5000/employees/name/Sanyo Sharma",
+            "url": "http://localhost:5000/employees/name/Vaibhav Sharma",
             "method": "GET",
             "sortNum": 40000,
             "created": "2024-12-22T08:46:12.682Z",
-            "modified": "2024-12-22T08:46:48.254Z",
+            "modified": "2024-12-22T10:05:59.859Z",
+            "headers": []
+        },
+        {
+            "_id": "396cc679-1a15-4654-a9ce-4254b74bdb7b",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Delete employee by email",
+            "url": "http://localhost:5000/employees/syo@msn.com",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-12-22T10:01:12.734Z",
+            "modified": "2024-12-22T10:02:04.438Z",
             "headers": []
         },
         {
@@ -77,6 +89,23 @@
             }
         },
         {
+            "_id": "62665e31-937b-437e-bb6f-298775f067f7",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Modify employee/s data by name",
+            "url": "http://localhost:5000/employees/Vaibhav Sharma",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-12-22T10:03:01.814Z",
+            "modified": "2024-12-22T10:05:49.618Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"isActive\" : false,\n    \"age\" : 21,\n    \"gender\" : \"male\",\n    \"eyeColor\" : \"blue\",\n    \"favoriteFruit\" : \"banana\",\n    \"company\" : {\n        \"title\" : \"Casablanca Comps\",\n        \"location\" : {\n            \"country\" : \"Delhi\",\n            \"address\" : \"586 Blake Court\"\n        }\n    },\n    \"tags\" : [\n        \"tempor\",\n        \"dosa\",\n        \"duis\"\n    ]\n}",
+                "form": []
+            }
+        },
+        {
             "_id": "879493c1-a5ae-48d6-b036-67584ca37279",
             "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
             "containerId": "",
@@ -89,5 +118,5 @@
             "headers": []
         }
     ],
-    "ref": "LigIm6jfMtNTBgobkHJoq5WN4j3voLHY9xHekYyT0KchYJTps7a7cMp3lHgSZ-uTQ3GF9fhS7rcUe_5nvJDu7g"
+    "ref": "LigIm6jfMtNTBgobkHJoq24hCTsTUeZ-ilFknzDK53v5jkjfwxS-wrY4OrWv6HlIF_ZUYOWzDXVrPpuQX8xkkQ"
 }
