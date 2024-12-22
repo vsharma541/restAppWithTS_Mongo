@@ -1,7 +1,8 @@
-import mongoose, { Date } from "mongoose";
+import mongoose from "mongoose";
+import Manager, { managerStruct } from "./manager";
 const MongSchema = mongoose.Schema;
 
-interface User {
+interface Employee {
     name: string,
     age: number,
     gender: string,
@@ -18,11 +19,11 @@ interface User {
     registered: Date, // this refers to string which is not string type but Date(typescript) type
     tags: string[],
     isActive: boolean
-}
+};
 
-type CustomType1 = User | null;
+type CustomTypeEmployee = Employee | null;
 
-const PersonSchema  = new MongSchema<User>({
+const defaultEmployeeSchemaStruct = {
     name: {
         type: String,
         required: true
@@ -65,11 +66,29 @@ const PersonSchema  = new MongSchema<User>({
         type: Boolean,
         required: true
     }
-});
+};
+const EmployeeSchema  = new MongSchema<Employee> (defaultEmployeeSchemaStruct);
 
-const Person = mongoose.model('Person', PersonSchema, 'Persons');
-export default User;
-export {
-    Person,
-    CustomType1
+type EmployeeManagerType = (typeof defaultEmployeeSchemaStruct & typeof managerStruct) | null;
+
+
+let employeeManagerSchemaStruct: EmployeeManagerType = {
+    ... defaultEmployeeSchemaStruct,
+    ... managerStruct
 }
+
+const EmployeeManagerSchema = new MongSchema<Manager> (employeeManagerSchemaStruct);
+
+const Employee = mongoose.model('Employee', EmployeeSchema, 'Persons');
+const EmployeeManager = mongoose.model('EmployeeManager', EmployeeManagerSchema, 'Persons');
+
+export default Employee;
+export {
+    Manager,
+    Employee,
+    EmployeeManager,
+    CustomTypeEmployee,
+    EmployeeManagerType,
+    MongSchema,
+    EmployeeManagerSchema
+};
