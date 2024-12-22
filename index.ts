@@ -1,8 +1,10 @@
 import express from 'express';
-import router from './routes/userRoutes';
-import connectMongoDb from './controllers/userController';
+import employeeRouter from './routes/employeeRoutes';
+import managerRouter from './routes/managerRoutes';
+import { connectMongoDb } from './mongoDbConnConfig';
 const app = express();
-app.use(router);
+app.use(employeeRouter);
+app.use(managerRouter);
 
 app.listen(5000, async () => {
     console.log('local host connected success!');
