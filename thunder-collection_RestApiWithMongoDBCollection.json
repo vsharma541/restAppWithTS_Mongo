@@ -1,0 +1,93 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "RestApiWithMongoDBCollection",
+    "collectionId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+    "dateExported": "2024-12-22T09:46:15.319Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9970b320-9eac-4d67-9524-595f6d6d2454",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Get employee/s",
+            "url": "http://localhost:5000/employees",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-12-22T08:33:21.700Z",
+            "modified": "2024-12-22T08:34:01.891Z",
+            "headers": []
+        },
+        {
+            "_id": "7f624b73-879d-41e3-99ae-59cd950d2ba0",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Add employee/s",
+            "url": "http://localhost:5000/employees",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-12-22T08:35:16.326Z",
+            "modified": "2024-12-22T08:47:45.215Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "[\n  {\n    \"name\": \"Suyoka Sharma\",\n    \"isActive\": true,\n    \"age\": 20,\n    \"gender\": \"female\",\n    \"eyeColor\": \"brown\",\n    \"favoriteFruit\": \"apple\",\n    \"company\": {\n      \"title\": \"CG\",\n      \"email\": \"siki@msn.com\",\n      \"phone\": \"+1 (311) 456-2418\",\n      \"location\": {\n        \"country\": \"Germany\",\n        \"address\": \"793 Prince Street\"\n      }\n    },\n    \"tags\": [\n      \"ex\",\n      \"laboris\",\n      \"et\",\n      \"aliquip\",\n      \"culpa\"\n    ]\n  },\n  {\n    \"name\": \"Sanyo Sharma\",\n    \"isActive\": true,\n    \"age\": 20,\n    \"gender\": \"male\",\n    \"eyeColor\": \"red\",\n    \"favoriteFruit\": \"guava\",\n    \"company\": {\n      \"title\": \"IVTL\",\n      \"email\": \"syo@msn.com\",\n      \"phone\": \"+1 (016) 456-2418\",\n      \"location\": {\n        \"country\": \"Germany\",\n        \"address\": \"793 Prince Street\"\n      }\n    },\n    \"tags\": [\n      \"ex\",\n      \"laboris\",\n      \"et\",\n      \"aliquip\",\n      \"culpa\"\n    ]\n  }\n]",
+                "form": []
+            }
+        },
+        {
+            "_id": "4584f1cf-0da1-41ca-bef8-580b18ddf3b9",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Get employee by email",
+            "url": "http://localhost:5000/employees/email/syo@msn.com",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-12-22T08:43:16.924Z",
+            "modified": "2024-12-22T08:47:17.387Z",
+            "headers": []
+        },
+        {
+            "_id": "4587f7bb-a348-4090-9469-a07a528608f1",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Get employee/s by name",
+            "url": "http://localhost:5000/employees/name/Sanyo Sharma",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-12-22T08:46:12.682Z",
+            "modified": "2024-12-22T08:46:48.254Z",
+            "headers": []
+        },
+        {
+            "_id": "eac5c477-c29e-4869-b0a2-121744a4d31a",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Add employee with manager",
+            "url": "http://localhost:5000/manager/6767d232c2da9ee4a67b6555",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-12-22T08:49:43.975Z",
+            "modified": "2024-12-22T08:51:16.466Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Tiniki Sharma\",\n  \"isActive\": true,\n  \"age\": 32,\n  \"gender\": \"female\",\n  \"eyeColor\": \"red\",\n  \"favoriteFruit\": \"guava\",\n  \"company\": {\n    \"title\": \"IVTL\",\n    \"email\": \"tins@msn.com\",\n    \"phone\": \"+1 (211) 456-2418\",\n    \"location\": {\n      \"country\": \"Germany\",\n      \"address\": \"793 Prince Street\"\n    }\n  },\n  \"tags\": [\n    \"ex\",\n    \"laboris\",\n    \"et\",\n    \"aliquip\",\n    \"culpa\"\n  ]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "879493c1-a5ae-48d6-b036-67584ca37279",
+            "colId": "24d67bae-8dce-41b6-aca4-be68b05679b2",
+            "containerId": "",
+            "name": "Get employee with its manager info",
+            "url": "http://localhost:5000/manager/email/tins@msn.com",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-12-22T08:51:49.244Z",
+            "modified": "2024-12-22T08:52:42.939Z",
+            "headers": []
+        }
+    ],
+    "ref": "LigIm6jfMtNTBgobkHJoq5WN4j3voLHY9xHekYyT0KchYJTps7a7cMp3lHgSZ-uTQ3GF9fhS7rcUe_5nvJDu7g"
+}
