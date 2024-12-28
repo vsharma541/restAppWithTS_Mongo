@@ -23,19 +23,34 @@ const getEmployeeFromEmail = async (employeeEmail: string): Promise<CustomTypeEm
 };
 
 const getEmployeesByName = async (employeeName: string): Promise<Employee[]> => {
+    const empNameRegex = new RegExp(`^${employeeName}`, 'i');
+    console.log(empNameRegex);
+    
     // Method 1
     const employees: Employee[] = await Employee.aggregate([
         {
             $match: {
-                name: employeeName
+                name: empNameRegex
             }
         }
     ]);
 
     // Method 2
     // const employees = await Employee.find({
-    //     name: employeeName
+    //     name: empNameRegex
     // }).exec();
+    return employees;
+}
+
+const getEmployeesByAge = async (empAge: number): Promise<Employee[]> => {
+    const employees: Employee[] = await Employee.find({
+        age: empAge
+    });
+    const indexScanResult: any = await Employee.find({
+        age: empAge
+    }).explain('executionStats');
+    console.log(JSON.stringify(indexScanResult, null, 2));
+    
     return employees;
 }
 
@@ -111,5 +126,6 @@ export {
     getEmployeeFromEmail,
     addEmployees,
     deleteEmployeeByEmail,
-    updateEmployees
+    updateEmployees,
+    getEmployeesByAge
 }

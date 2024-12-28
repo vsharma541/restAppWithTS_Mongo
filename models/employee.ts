@@ -30,7 +30,8 @@ const defaultEmployeeSchemaStruct = {
     },
     age: {
         type: Number,
-        required: true
+        required: true,
+        index: true
     },
     gender: {
         type: String,
@@ -81,6 +82,10 @@ const EmployeeManagerSchema = new MongSchema<Manager> (employeeManagerSchemaStru
 
 const Employee = mongoose.model('Employee', EmployeeSchema, 'Persons');
 const EmployeeManager = mongoose.model('EmployeeManager', EmployeeManagerSchema, 'Persons');
+
+
+Employee.syncIndexes();
+EmployeeManager.syncIndexes();
 
 export default Employee;
 export {

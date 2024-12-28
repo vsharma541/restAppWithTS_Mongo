@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { getEmployees, getEmployeeFromEmail, getEmployeesByName, addEmployees, deleteEmployeeByEmail, updateEmployees } from "../controllers/employeeController";
+import { getEmployees, getEmployeeFromEmail, getEmployeesByName, addEmployees, deleteEmployeeByEmail, updateEmployees, getEmployeesByAge } from "../controllers/employeeController";
 import Employee, { CustomTypeEmployee } from "../models/employee";
 import express from 'express';
 const router = Router();
@@ -15,6 +15,15 @@ router.get('/employees', async (req: Request, resp: Response): Promise<any> => {
 router.get('/employees/name/:name', async (req: Request, resp: Response): Promise<any> => {
     const employeeName: string = req.params.name;
     const employee: Employee[] = await getEmployeesByName(employeeName);
+    resp.send(employee);
+});
+
+router.get('/employees/age/:age', async (req: Request, resp: Response): Promise<any> => {
+    let employeeAge: number = Number(req.params.age);
+    if (isNaN(employeeAge)) {
+        resp.send('The age is not correct');
+    }
+    const employee: Employee[] = await getEmployeesByAge(employeeAge);
     resp.send(employee);
 });
 
